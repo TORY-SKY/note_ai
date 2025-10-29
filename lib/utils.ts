@@ -44,19 +44,49 @@ export const update_db_Task = async (
   id: string,
   updates: Partial<Task>
 ): Promise<Task> => {
-  const res = await fetch(`${BASE_URL}/${updates.id}`, {
-    method: 'PUT',
+  // 1. Use the 'id' parameter to construct the URL
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updates),
   });
 
+  // 2. Correctly check for success status
+  if (!res.ok) {
+    let errorMessage = `HTTP error! Status: ${res.status}`;
+    
+    // --- START OF ROBUST ERROR FIX ---
+    // Read the body safely as text first (consumes the stream)
+    const rawErrorBody = await res.text(); 
+    
+    // Attempt to parse the text as JSON only if content exists and looks like JSON
+    if (rawErrorBody && (rawErrorBody.trim().startsWith('{') || rawErrorBody.trim().startsWith('['))) {
+        try {
+            const errorBody = JSON.parse(rawErrorBody);
+            // Prioritize a message field, or use the whole object
+            errorMessage += ` - ${errorBody.message || JSON.stringify(errorBody)}`;
+        } catch (e) {
+            // If JSON parsing fails despite the brackets, use the raw text
+            errorMessage += ` - Raw body: ${rawErrorBody.substring(0, 150)}...`;
+            console.error("Failed to parse error body as JSON, falling back to raw text.", e);
+        }
+    } else if (rawErrorBody) {
+        // If it's plain text/HTML, use it directly
+        errorMessage += ` - ${rawErrorBody.substring(0, 150)}...`;
+    }
+    // --- END OF ROBUST ERROR FIX ---
 
-  if(res.error){
-    console.error(res.error)
+    // Throw the final error
+    throw new Error(errorMessage);
   }
-  return res.json();
 
+  // 3. Return the parsed JSON response for successful requests
+  // This is safe because we only reach this line on a successful (res.ok) response
+  return res.json();
 };
+
+
+// delete function
 
 export const deleteTask = async (id: string): Promise<void> => {
   await fetch(`${BASE_URL}/${id}`, {

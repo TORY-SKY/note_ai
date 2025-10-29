@@ -189,6 +189,12 @@ FetchedTasks()
         completed: false,
         created_at: Date.now(),
       }
+      const db_task = {
+        title: newTask,
+        priority,
+        completed: false,
+        due_date
+      }
 
       // Add task to state
       const updatedTasks = [...tasks, task];
@@ -201,7 +207,7 @@ FetchedTasks()
       setNewTask("")
       setDueDate("")
       setPriority(task.priority);
-      fetchDataAPI(extractTask);
+      fetchDataAPI(db_task);
       toast({
         title: "Success",
         description: "Task added successfully",
@@ -320,6 +326,7 @@ FetchedTasks()
   const openEditDialog = (task: Task) => {
     setEditingTask(task);
     setIsEditDialogOpen(true);
+    console.log(task);
 
 //     const updateTask = async (
 //   id: string,
@@ -413,6 +420,7 @@ FetchedTasks()
     const response = await fetch(endPoint, {
       method: 'DELETE',
     });
+    console.log(response.status);
 
 }
 deleteTaskFromDB(taskToDelete.id);
