@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import ChatBot from "@/components/ui/ChatBot"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
@@ -559,10 +560,14 @@ deleteTaskFromDB(taskToDelete.id);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+          <ChatBot />
+      
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Header */}
         <header className="mb-8 text-center">
           <h1 className="text-5xl font-bold text-white mb-2 tracking-tight">Eton</h1>
+
+
           
           <p className="text-slate-300">Your African-centered productivity companion</p>
         </header>
