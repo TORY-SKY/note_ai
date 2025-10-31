@@ -13,7 +13,7 @@ if(!isOpen){
 		<X  className="flex flex-row top-0 text-white"  />
 			
 		</button>
-	<div className="relative flex flex-col  overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-xl   shadow-xl bg-opacity-30 backdrop-blur-lg z-40 w-80 h-96">
+	<div className="relative flex flex-col  overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-xl   bg-opacity-30 backdrop-blur-lg z-40 w-80 h-96">
 	{/*<div className="absolute top-0 flex ">*/}
 		
 	{/*</div>*/}

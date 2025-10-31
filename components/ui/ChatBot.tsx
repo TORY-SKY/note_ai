@@ -16,6 +16,7 @@ export default function ChatBot (){
                 // or you can wrap it here with its container classes.
                 <div className="fixed bottom-4 right-4 z-50 shadow-lg "> 
                     <ChatWindow isOpen={isOpen} setIsOpen={setIsOpen} />
+
                 </div>
             )}
             
@@ -26,7 +27,7 @@ export default function ChatBot (){
                     onClick={()=>setIsOpen(true)} 
                 >
                     {/* Assuming Ai_icon is your button/icon for opening */}
-                    <Ai_icon className="size-14" /> 
+                    <Ai_icon className="size-14 cursor-pointer" /> 
                 </div>
             )}
         </>
