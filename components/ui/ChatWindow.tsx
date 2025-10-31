@@ -13,12 +13,12 @@ if(!isOpen){
 		<X  className="flex flex-row top-0 text-white"  />
 			
 		</button>
-	<div className="relative rounded-xl rounded-xl items-center justify-center p-1 shadow-xl bg-opacity-30 backdrop-blur-lg z-40 w-80 h-96">
+	<div className="relative overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-xl rounded-xl items-center justify-center  shadow-xl bg-opacity-30 backdrop-blur-lg z-40 w-80 h-96">
 	{/*<div className="absolute top-0 flex ">*/}
 		
 	{/*</div>*/}
 
-		<nav className="flex flex-row items-center justify-between p-3 rounded-xl z-20 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-700">
+		<nav className="sticky top-0 flex flex-row w-full items-center justify-between p-3 rounded-xl z-20 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-700">
 			{/*user display image*/}
 			<div className="flex flex-row items-center justify-between">
 				<img src="./ai.avif" className="size-14" />
@@ -32,8 +32,22 @@ if(!isOpen){
 			</div>
 		</nav>
 
-		<div>
+		<div className="border flex flex-col items-center justify-center">
 			{/*chatbot*/}
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world</h1>
 
 		</div>
 
