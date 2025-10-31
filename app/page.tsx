@@ -1040,8 +1040,7 @@ deleteTaskFromDB(taskToDelete.id);
                 <Mic className="h-12 w-12 text-sky-400" />
               </div>
               <p className="text-center text-slate-300">
-                Voice input feature is simulated. In a real app, this would use Web Speech API or a cloud-based
-                speech-to-text service.
+                We are rolling out this feature soon
               </p>
             </div>
             <DialogFooter>
