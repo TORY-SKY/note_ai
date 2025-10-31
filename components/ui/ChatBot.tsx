@@ -22,7 +22,7 @@ export default function ChatBot (){
 
             {!isOpen && (
                 <div 
-                    className="fixed bottom-4 right-4 z-50 rounded-full items-center justify-center  transition" 
+                    className="fixed bottom-4 right-4 z-50 rounded-full items-center justify-center animate-bounce transition" 
                     onClick={()=>setIsOpen(true)} 
                 >
                     {/* Assuming Ai_icon is your button/icon for opening */}

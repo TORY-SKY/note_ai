@@ -13,7 +13,7 @@ if(!isOpen){
 		<X  className="flex flex-row top-0 text-white"  />
 			
 		</button>
-	<div className="relative overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-xl rounded-xl items-center justify-center  shadow-xl bg-opacity-30 backdrop-blur-lg z-40 w-80 h-96">
+	<div className="relative flex flex-col  overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-xl   shadow-xl bg-opacity-30 backdrop-blur-lg z-40 w-80 h-96">
 	{/*<div className="absolute top-0 flex ">*/}
 		
 	{/*</div>*/}
@@ -32,8 +32,9 @@ if(!isOpen){
 			</div>
 		</nav>
 
-		<div className="border flex flex-col items-center justify-center">
+		<div className=" flex flex-col ">
 			{/*chatbot*/}
+			{/*<h1>Hello world hello world hello worldworldworldworldworld</h1>
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
@@ -41,14 +42,13 @@ if(!isOpen){
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
+			<h1>Hello world hello world hello world world</h1>
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
 			<h1>Hello world hello world hello world</h1>
-			<h1>Hello world hello world hello world</h1>
-			<h1>Hello world hello world hello world</h1>
-			<h1>Hello world hello world hello world</h1>
-
+			<h1>Hello world hello world hello world world world world</h1>
+*/}
 		</div>
 
 	</div>
