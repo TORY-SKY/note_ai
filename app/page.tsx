@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { format, isToday, isTomorrow, parseISO } from "date-fns"
-import { CheckCircle, Circle, Clock, Edit, Flag, Mic, Plus, Sparkles, Trash2 } from "lucide-react"
+import { CheckCircle, Circle, Clock, Edit, Flag, Mic, Plus, Trash2 } from "lucide-react"
 
 // Import UI components
 import { Button } from "@/components/ui/button"
@@ -575,7 +575,6 @@ deleteTaskFromDB(taskToDelete.id);
         {/* Daily African Proverb */}
         <div className="mb-8 backdrop-blur-xl bg-white/10 rounded-3xl p-6 shadow-lg border border-white/20">
           <div className="flex items-center gap-2 mb-2">
-            <Sparkles className="h-5 w-5 text-sky-400" />
             <h2 className="text-lg font-semibold text-white">Daily African Insight</h2>
           </div>
           {isProverbLoading ? (
