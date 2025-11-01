@@ -45,7 +45,8 @@ const africanProverbs = [
 ]
 
 // Mock data storage service
-const API_URL = "http://localhost:8080"
+// const API_URL = "https://eton-ai.onrender.com"
+const API_URL = "https://eton-ai.onrender.com"
 
 
 
