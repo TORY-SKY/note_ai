@@ -134,7 +134,7 @@ if(!res.ok){
 // this useEffect fetches for Tasks data from the postgrl sql database everytime the page refreshes
 useEffect(()=>{
 FetchedTasks()
-}, [incomingData])
+}, [incomingData, demoData])
 
  const fetchDataAPI = async (tasksData: Task[])=>{
       if (tasksData.length === 0) return; // 👈 Avoid sending empty array
@@ -358,9 +358,10 @@ FetchedTasks()
      }
       setEditingTask(tasks.map((task) => (task.id === editingTask.id ? editingTask : task)));
   update_db_Task(editingTask.id, editingTask);
-    await  FetchedTasks();
 
       setIsEditDialogOpen(false);
+    await  FetchedTasks();
+
       toast({
         title: "Success",
         description: "Task updated successfully",
