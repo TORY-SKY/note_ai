@@ -137,8 +137,10 @@ export default function ChatWindow ({isOpen, setIsOpen}){
                                     ? 'bg-blue-600 text-white rounded-br-sm' 
                                     : 'bg-gray-200 text-gray-800 rounded-tl-sm'
                             }`}>
-                            <TypewriterEffect text={message.text} />
+                            
+                            {message.sender === "user" ? message.text : <TypewriterEffect text={message.text} />}
                                 {/*{message.text}*/}
+                            }
                             </div>
                         </div>
                     ))}
