@@ -140,7 +140,7 @@ export default function ChatWindow ({isOpen, setIsOpen}){
                             
                             {message.sender === "user" ? message.text : <TypewriterEffect text={message.text} />}
                                 {/*{message.text}*/}
-                            }
+                            
                             </div>
                         </div>
                     ))}
