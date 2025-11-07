@@ -75,17 +75,22 @@ export default function ChatWindow ({isOpen, setIsOpen}){
             }
 
             // C. Parse the JSON response
-            const {message, ai} = await response.json();
+            const {message, ai, functionCall} = await response.json();
+            console.log(ai);
 
 
-            
+
+            const decide_if_fn_call = ai.text ? ai.text : "functionCall"
             // D. Add the AI's response from the backend to the UI
             const aiResponse: Message = { 
                 id: Date.now() + 1, 
-                text: ai || "Server response was incomplete.",
+                // text: ai.text || "Server response was incomplete.",
+                text: decide_if_fn_call,
                 sender: "ai" 
             };
             setMessages(prevMessages => [...prevMessages, aiResponse]);
+
+            console.log(messages);
 
 
         } catch (error) {

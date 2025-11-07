@@ -23,7 +23,7 @@ type Priority = 'Low' | 'Medium' | 'High';
 interface Task {
   id: string;
   title: string;
-  due_ate: string;
+  due_date: string;
   priority: Priority;
   completed: boolean;
   created_at: number;
@@ -46,7 +46,7 @@ const africanProverbs = [
 
 // Mock data storage service
 // const API_URL = "https://eton-ai.onrender.com"
-const API_URL = "https://eton-ai.onrender.com"
+const API_URL = "http://localhost:8080"
 
 
 
@@ -104,37 +104,31 @@ export default function App() {
   }
 
   // the AddNewItem function makes Get request to /tasks directory in the nodejs backend
-const FetchedTasks = async ()=>{
-  try{
-const res = await fetch(`${API_URL}/api/tasks`);
-const demoData = await res.json();
-console.log(demoData);
-setDemoData(demoData);
-  setIsLoading(false);
-    
-if(!res.ok){
-  const errorBody = await res.json().catch(() => ({ message: 'Failed to parse error body' })); // Handle potential parsing errors
-      throw new Error(`HTTP error! status: ${res.status}, body: ${JSON.stringify(errorBody)}`);
-}
+const FetchedTasks = async () => {
+  try {
+    const res = await fetch(`${API_URL}/api/tasks`);
+    if (!res.ok) {
+      const errorBody = await res.text();
+      throw new Error(`HTTP error! status: ${res.status}, body: ${errorBody}`);
+    }
 
-} catch(error){
-  console.error(`Failed to fetch task: ${error.message}. budy`);
-  return null;
+    const data: Task[] = await res.json();
+    setDemoData(data);
+    setIsLoading(false);
+    return data;
+  } catch (error: any) {
+    console.error(`Failed to fetch tasks: ${error.message}`);
+    setIsLoading(false);
+    return [];
+  }
+};
 
-}
-  
-
-
-
-
-  return demoData;
-
-}
 
 // this useEffect fetches for Tasks data from the postgrl sql database everytime the page refreshes
 useEffect(()=>{
-FetchedTasks()
-}, [incomingData, demoData])
+FetchedTasks();
+simulateFetchDailyProverb();
+}, [])
 
  const fetchDataAPI = async (tasksData: Task[])=>{
       if (tasksData.length === 0) return; // 👈 Avoid sending empty array
