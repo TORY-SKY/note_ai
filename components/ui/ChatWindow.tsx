@@ -80,7 +80,7 @@ export default function ChatWindow ({isOpen, setIsOpen}){
 
 
 
-            const decide_if_fn_call = ai.text ? ai.text : "functionCall"
+            const decide_if_fn_call = ai.text ? ai.text : ai.text;
             // D. Add the AI's response from the backend to the UI
             const aiResponse: Message = { 
                 id: Date.now() + 1, 
