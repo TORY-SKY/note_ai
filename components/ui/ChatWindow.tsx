@@ -56,7 +56,7 @@ export default function ChatWindow ({isOpen, setIsOpen}){
 
         // B. Call the Express.js Backend API using fetch
         try {
-            const response = await fetch('http://localhost:8080/api/chat', { 
+            const response = await fetch('https://eton-ai.onrender.com/api/chat', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
